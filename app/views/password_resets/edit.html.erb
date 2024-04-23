@@ -1,0 +1,12 @@
+<h2>Informe uma nova senha:</h2>
+<%= form_with model: @user, url: password_reset_edit_path(token: params[:token]) do |form| %>
+  <div class="field">
+    <%= form.label :password, "senha" %>
+    <%= form.password_field :password %>
+  </div>
+  <div class="field">
+    <%= form.label :password_confirmation, "confirmação de senha" %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+  <%= form.submit 'Redefinir senha' %>
+<%end%>

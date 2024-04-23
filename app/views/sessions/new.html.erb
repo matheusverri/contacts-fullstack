@@ -8,6 +8,7 @@
   <div class="field">
     <%= label_tag :password %><br />
     <%= password_field_tag :password %>
+    <%= link_to "esqueceu sua senha?", password_reset_path %>
   </div>
   <div class="actions"><%= submit_tag "Log In" %></div>
 <% end %>
