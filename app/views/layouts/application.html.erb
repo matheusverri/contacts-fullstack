@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ContactsFullstack</title>
+    <title>Gerenciador de Contatos</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <nav>
+      <% if current_user %>
+        Logado como: <%= current_user.email %>
+        <%= link_to "Sair", logout_path %>
+      <% else %>
+        <%= link_to "Criar conta", signup_path %> ou
+        <%= link_to "Entrar", login_path %>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>
