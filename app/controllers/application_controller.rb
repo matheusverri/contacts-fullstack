@@ -8,6 +8,6 @@ private
   helper_method :current_user
 
   def authorize
-    redirect_to root_url, alert: "Não autorizado. Realize o login." unless current_user
+    redirect_to login_path, alert: "Não autorizado. Realize o login." unless current_user
   end
 end

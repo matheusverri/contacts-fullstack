@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   get 'password_resets/new'
   get 'password_resets/create'
   get 'password_resets/edit'
@@ -15,6 +16,6 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
-  root 'users#new'
+  root 'contacts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
