@@ -13,6 +13,20 @@ class UsersController < ApplicationController
       end
   end
 
+  def delete
+  end
+
+  def destroy
+    user = current_user
+    if user && user.authenticate(params[:password])
+      current_user.destroy
+      session[:user_id] = nil
+      redirect_to signup_path, notice: "Sua conta foi excluída com sucesso."
+    else
+      redirect_to root_url, alert: "Senha incorreta. Por favor, tente novamente."
+    end
+  end
+
   private
 
   def user_params

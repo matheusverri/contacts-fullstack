@@ -1,0 +1,5 @@
+<%= form_tag(destroy_users_path) do %>
+  <%= label_tag :password, "Digite sua senha:" %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Confirmar exclusão", data: { confirm: "Tem certeza que deseja excluir sua conta?" } %>
+<% end %>
