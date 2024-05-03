@@ -8,7 +8,8 @@ class ContactsController < ApplicationController
     if params[:search].present?
       search_term = params[:search].downcase
       @contacts = @contacts.where("LOWER(name) LIKE ? OR LOWER(cpf) LIKE ?", "%#{search_term}%", "%#{search_term}%")
-    end  end
+    end  
+  end
 
   # GET /contacts/1 or /contacts/1.json
   def show
