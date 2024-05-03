@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
 
   # GET /contacts or /contacts.json
   def index
-    @contacts = Contact.all
+    @contacts = Contact.all.order(:name)
     if params[:search].present?
       search_term = params[:search].downcase
       @contacts = @contacts.where("LOWER(name) LIKE ? OR LOWER(cpf) LIKE ?", "%#{search_term}%", "%#{search_term}%")
