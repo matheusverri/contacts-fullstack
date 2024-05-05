@@ -24,7 +24,7 @@
   <tbody id="contacts">
     <% @contacts.each do |contact| %>
       <tr id=<%= contact.id %>>
-        <td><a href="javascript:;" id=<%= contact.id %> class="btn-center-map"><%= contact.name %></a></td>
+        <td><a href="javascript:;" id=<%= contact.id %> class="btn-center-map" data-lat=<%= contact.lat %> data-lng=<%= contact.lng %>><%= contact.name %></a></td>
         <td><%= contact.cpf %></td>
         <td><%= contact.phone_number %></td>
         <td><%= contact.cep %></td>
@@ -73,10 +73,17 @@
 </script>
 
 <script>
+  function moveMapToPosition(lat, lng) {
+    var newPosition = new google.maps.LatLng(lat, lng);
+    map.panTo(newPosition);
+    //marker.setPosition(newPosition);
+    map.setZoom(15);
+  }
+
   var contactsList = document.getElementById("contacts");
   contactsList.addEventListener("click", function(event) {
     if (event.target.tagName === "A") {
-      
+      moveMapToPosition(event.target.dataset.lat, event.target.dataset.lng);
     }
   })
 </script>
