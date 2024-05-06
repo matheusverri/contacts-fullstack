@@ -28,12 +28,28 @@
 
   <div class="field">
     <%= form.label :cep %>
-    <%= form.text_field :cep %>
+    <%= form.text_field :cep, onblur: "pesquisacep(this.value);" %>
   </div>
 
   <div class="field">
     <%= form.label :address %>
     <%= form.text_field :address %>
+    <input type="button" value="Verificar lat/lng" onclick="codeAddress()">
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :neighborhood %>
+    <%= form.text_field :neighborhood %>
   </div>
 
   <div class="field">

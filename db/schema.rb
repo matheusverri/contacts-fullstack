@@ -39,8 +39,11 @@ ActiveRecord::Schema.define(version: 2024_05_02_142238) do
     t.string "phone_number"
     t.string "cep"
     t.string "address"
-    t.string "lat"
-    t.string "lng"
+    t.string "state"
+    t.string "city"
+    t.string "neighborhood"
+    t.float "lat"
+    t.float "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
