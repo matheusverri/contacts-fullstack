@@ -1,24 +1,27 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Gerencie seus contatos de maneira simples!
 
-Things you may want to cover:
+## Este projeto conta com integrações às APIs
 
-* Ruby version
+ - [Google Maps API](https://developers.google.com/maps/documentation/javascript?hl=pt-br)
+ - [Geocoding API](https://developers.google.com/maps/documentation/geocoding/overview)
+ - [ViaCEP API](https://viacep.com.br/)
 
-* System dependencies
 
-* Configuration
+## Variáveis de Ambiente
 
-* Database creation
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
 
-* Database initialization
+`GOOGLE_MAPS_API_KEY` (gerenciada no Google console)
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+## Rodando os testes
+
+Para rodar os testes, digite o seguinte comando
+
+```bash
+  rspec 
+```
+
